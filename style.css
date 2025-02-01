@@ -1,12 +1,12 @@
 /* Custom Properties */
 :root {
-  --primary: #5fb3ff;
-  --secondary: #2c2c3f;
-  --dark: #1e1e2f;
-  --light: #ffffff;
-  --accent: #ff6b6b;
-  --gradient-primary: linear-gradient(135deg, #5fb3ff, #4a90e2);
-  --gradient-dark: linear-gradient(135deg, #2c2c3f, #1e1e2f);
+  --primary: #6C63FF;
+  --secondary: #2C2C3F;
+  --dark: #1E1E2F;
+  --light: #FFFFFF;
+  --accent: #FF6B6B;
+  --gradient-primary: linear-gradient(135deg, #6C63FF, #4A90E2);
+  --gradient-dark: linear-gradient(135deg, #2C2C3F, #1E1E2F);
   --shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   --transition: all 0.3s ease;
 }
@@ -66,7 +66,7 @@ body {
   width: 100%;
   top: 0;
   z-index: 1000;
-  border-bottom: 1px solid rgba(95, 179, 255, 0.1);
+  border-bottom: 1px solid rgba(108, 99, 255, 0.1);
 }
 
 .header .container {
@@ -90,17 +90,15 @@ body {
 }
 
 @keyframes float {
-
-  0%,
-  100% {
-    transform: translateY(0);
+  0%, 100% {
+    transform: translateY(5px);
   }
-
   50% {
     transform: translateY(-5px);
   }
 }
 
+/* Nav Bar */
 .nav-links {
   list-style: none;
   display: flex;
@@ -172,7 +170,7 @@ body {
   position: absolute;
   width: 200%;
   height: 200%;
-  background: radial-gradient(circle, var(--primary) 0%, transparent 10%);
+  background: radial-gradient(circle, var(--primary) 3%, transparent 10%);
   background-size: 50px 50px;
   opacity: 0.1;
   animation: backgroundMove 20s linear infinite;
@@ -182,7 +180,6 @@ body {
   0% {
     transform: translate(0, 0);
   }
-
   100% {
     transform: translate(-50%, -50%);
   }
@@ -202,11 +199,11 @@ body {
 
 .btn {
   display: inline-block;
-  padding: 1rem 2.5rem;
+  padding: 1rem 2rem;
   background: var(--gradient-primary);
   color: var(--light);
   text-decoration: none;
-  border-radius: 50px;
+  border-radius: 10px;
   font-weight: bold;
   transition: var(--transition);
   position: relative;
@@ -268,15 +265,22 @@ section h2::after {
 .card {
   background: var(--secondary);
   padding: 2rem;
-  border-radius: 15px;
+  border-radius: 10px;
   transition: var(--transition);
   position: relative;
   overflow: hidden;
+  text-align: center;
+}
+
+.card i {
+  font-size: 2.5rem;
+  color: var(--primary);
+  margin-bottom: 1rem;
 }
 
 .card:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow);
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(108, 99, 255, 0.2);
 }
 
 .card::before {
@@ -286,7 +290,7 @@ section h2::after {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(95, 179, 255, 0.1), transparent);
+  background: linear-gradient(90deg, transparent, rgba(108, 99, 255, 0.1), transparent);
   transition: 0.5s;
 }
 
@@ -294,8 +298,24 @@ section h2::after {
   left: 100%;
 }
 
+/* Service Cards */
 .service-card {
   text-align: center;
+  padding: 2rem;
+  background: var(--secondary);
+  border-radius: 10px;
+  transition: var(--transition);
+}
+
+.service-card i {
+  font-size: 3rem;
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(108, 99, 255, 0.2);
 }
 
 .service-features {
@@ -306,14 +326,14 @@ section h2::after {
 .service-features li {
   margin: 0.5rem 0;
   padding: 0.5rem;
-  background: rgba(95, 179, 255, 0.1);
+  background: rgba(108, 99, 255, 0.1);
   border-radius: 5px;
 }
 
 /* Portfolio */
 .portfolio-item {
   position: relative;
-  border-radius: 15px;
+  border-radius: 10px;
   overflow: hidden;
   aspect-ratio: 16/9;
 }
@@ -328,7 +348,8 @@ section h2::after {
 .portfolio-item .overlay {
   position: absolute;
   inset: 0;
-  background: rgba(95, 179, 255, 0.9);
+  background: rgba(108, 99, 255, 0.8);
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -355,7 +376,7 @@ section h2::after {
 }
 
 .form-group {
-  margin-bottom: 1.5rem;
+  margin-bottom: 2.5rem;
 }
 
 .form-group label {
@@ -378,7 +399,7 @@ section h2::after {
 .form-group textarea:focus {
   outline: none;
   border-color: var(--primary);
-  box-shadow: 0 0 0 2px rgba(95, 179, 255, 0.2);
+  box-shadow: 0 0 0 2px rgba(108, 99, 255, 0.2);
 }
 
 /* Social Links */
@@ -397,11 +418,19 @@ section h2::after {
   text-decoration: none;
   border-radius: 25px;
   transition: var(--transition);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.social-links a i {
+  font-size: 1.2rem;
 }
 
 .social-links a:hover {
   transform: translateY(-3px);
   box-shadow: var(--shadow);
+  background: var(--primary);
 }
 
 /* Footer */
@@ -423,16 +452,39 @@ section h2::after {
   opacity: 0.1;
 }
 
+.footer p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
 /* Animations */
 @keyframes fadeInUp {
   from {
     opacity: 0;
     transform: translateY(30px);
   }
-
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(5px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes backgroundMove {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-50%, -50%);
   }
 }
 
@@ -478,24 +530,90 @@ section h2::after {
   section {
     padding: 3rem 0;
   }
+
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero p {
+    font-size: 1.2rem;
+  }
+
+  .btn {
+    padding: 0.8rem 1.5rem;
+  }
+
+  .card, .service-card {
+    padding: 1.5rem;
+  }
+
+  .portfolio-item .overlay {
+    padding: 1rem;
+  }
+
+  .social-links a {
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+  }
 }
 
-/* Print Styles */
-@media print {
+/* Additional Enhancements */
+/* Hover Effects for Cards */
+.card:hover i {
+  color: var(--accent);
+}
 
-  .header,
-  .footer,
-  .btn,
-  .social-links {
-    display: none;
-  }
+.service-card:hover i {
+  color: var(--accent);
+}
 
-  body {
-    color: #000;
-    background: #fff;
-  }
+/* Portfolio Item Overlay Enhancements */
+.portfolio-item .overlay h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
 
-  section {
-    page-break-inside: avoid;
-  }
+.portfolio-item .overlay p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.portfolio-item .overlay .btn {
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+}
+
+/* Contact Form Enhancements */
+.contact-form .btn {
+  width: 100%;
+  margin-top: 1rem;
+}
+
+/* Footer Enhancements */
+.footer p a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.footer p a:hover {
+  color: var(--accent);
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
 }
